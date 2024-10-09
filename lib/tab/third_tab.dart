@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 class ThirdTab extends StatelessWidget {
+  const ThirdTab({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.green,
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Icon(
-                Icons.favorite,
-                size: 200.0,
-                color: Colors.white,
-              ),
-              Text(
-                'First Tab',
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.airport_shuttle,
+              size: 200.0,
+              color: Colors.white,
+            ),
+            Text(
+              'Third Tab',
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
         ),
       ),
     );
