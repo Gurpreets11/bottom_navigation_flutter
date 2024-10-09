@@ -4,7 +4,7 @@ import 'package:bottom_navigation_fapp/tab/third_tab.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationPage extends StatefulWidget {
-  BottomNavigationPage() : super();
+  const BottomNavigationPage({super.key});
 
   final String title = "Bottom Navigation";
 
@@ -31,33 +31,24 @@ class BottomNavigationPageState extends State<BottomNavigationPage> with SingleT
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Bottom Navigation",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text("Bottom Navigation", style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black87,
       ),
       body: TabBarView(
-        children: <Widget>[
+        controller: controller,
+        children: const <Widget>[
           FirstTab(),
           SecondTab(),
           ThirdTab(),
         ],
-        controller: controller,
       ),
       bottomNavigationBar: Material(
         color: Colors.blue,
         child: TabBar(
-          tabs: <Widget>[
-            Tab(
-              icon: Icon(Icons.favorite),
-            ),
-            Tab(
-              icon: Icon(Icons.add),
-            ),
-            Tab(
-              icon: Icon(Icons.airport_shuttle),
-            ),
+          tabs: const <Widget>[
+            Tab(icon: Icon(Icons.favorite),),
+            Tab(icon: Icon(Icons.add),),
+            Tab(icon: Icon(Icons.airport_shuttle),),
           ],
           controller: controller,
         ),

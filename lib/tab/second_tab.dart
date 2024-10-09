@@ -16,10 +16,7 @@ class SecondTab extends StatelessWidget {
               size: 200.0,
               color: Colors.white,
             ),
-            Text(
-              'Second Tab',
-              style: TextStyle(color: Colors.white),
-            ),
+            Text('Second Tab', style: TextStyle(color: Colors.white),),
           ],
         ),
       ),
