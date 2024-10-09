@@ -1,0 +1,67 @@
+import 'package:bottom_navigation_fapp/tab/first_tab.dart';
+import 'package:bottom_navigation_fapp/tab/second_tab.dart';
+import 'package:bottom_navigation_fapp/tab/third_tab.dart';
+import 'package:flutter/material.dart';
+
+class BottomNavigationPage extends StatefulWidget {
+  BottomNavigationPage() : super();
+
+  final String title = "Bottom Navigation";
+
+  @override
+  BottomNavigationPageState createState() => BottomNavigationPageState();
+}
+
+class BottomNavigationPageState extends State<BottomNavigationPage> with SingleTickerProviderStateMixin {
+  late TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Bottom Navigation",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black87,
+      ),
+      body: TabBarView(
+        children: <Widget>[
+          FirstTab(),
+          SecondTab(),
+          ThirdTab(),
+        ],
+        controller: controller,
+      ),
+      bottomNavigationBar: Material(
+        color: Colors.blue,
+        child: TabBar(
+          tabs: <Widget>[
+            Tab(
+              icon: Icon(Icons.favorite),
+            ),
+            Tab(
+              icon: Icon(Icons.add),
+            ),
+            Tab(
+              icon: Icon(Icons.airport_shuttle),
+            ),
+          ],
+          controller: controller,
+        ),
+      ),
+    );
+  }
+}
